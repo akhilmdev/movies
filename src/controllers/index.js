@@ -3,6 +3,7 @@ const Movie = require('../models/movie');
 const NotFoundError = require('../errors/not-found-error');
 
 const findAll = async (request, response) => {
+  console.log('+++++++++++')
   response.status(HttpStatus.OK).json(await Movie.find().sort('title'));
 };
 

@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('tiny'));
 app.use('/api/movies/', movies);
 
-app.listen(config.server.port, config.server.host, () => {
-  
-  console.log(`Server is running on ${config.server.host}:${config.server.port}`);
+app.listen(config.server.port, () => {
+
+  console.log(`Server is running on port: ${config.server.port}`);
 });

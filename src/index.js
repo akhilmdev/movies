@@ -2,10 +2,9 @@ const config = require('./config');
 const express = require('express');
 const helmet = require('helmet');
 const morgan = require('morgan');
-const crossOriginResourcePolicy = require("cross-origin-resource-policy");
 const mongoose = require('mongoose');
 const movies = require('./routes/movies');
-import cors from "cors";
+const cors = require("cors");
 
 const app = express();
 

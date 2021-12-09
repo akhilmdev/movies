@@ -5,7 +5,7 @@ const NotFoundError = require('../errors/not-found-error');
 const findAll = async (request, response) => {
   const movies = await Movie.find().sort('title');
   console.log(movies);
-  response.status(HttpStatus.OK).json(movies);
+  response.status(HttpStatus.OK).json(JSON.parse(movies));
 };
 
 const find = async ({ params }, response) => {

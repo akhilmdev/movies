@@ -9,6 +9,12 @@ const cors = require("cors");
 
 const app = express();
 
+const corsOptions ={
+  origin:'*', 
+  credentials:true,
+  optionSuccessStatus:200,
+}
+
 mongoose
   .connect(config.database.url, {
     useNewUrlParser: true,
@@ -19,7 +25,7 @@ mongoose
   .catch(error => console.error(`Cannot connect to MongoDB: ${error}`));
 
 app.use(helmet());
-app.use(cors({ origin: false }));
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('tiny'));

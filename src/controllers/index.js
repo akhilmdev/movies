@@ -3,8 +3,9 @@ const Movie = require('../models/movie');
 const NotFoundError = require('../errors/not-found-error');
 
 const findAll = async (request, response) => {
-  console.log('+++++++++++')
-  response.status(HttpStatus.OK).json(await Movie.find().sort('title'));
+  const movies = await Movie.find().sort('title');
+  console.log(movies);
+  response.status(HttpStatus.OK).json(movies);
 };
 
 const find = async ({ params }, response) => {

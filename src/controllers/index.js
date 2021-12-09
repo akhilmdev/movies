@@ -6,7 +6,6 @@ const findAll = async (request, response) => {
   const movies = await Movie.find().sort('title');
   try {
     console.log(JSON.stringify(movies))
-    console.log(JSON.parse(movies));
   } catch (e) {
     console.log(e)
   }

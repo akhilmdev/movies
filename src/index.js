@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const crossOriginResourcePolicy = require("cross-origin-resource-policy");
 const mongoose = require('mongoose');
 const movies = require('./routes/movies');
+import cors from "cors";
 
 const app = express();
 
@@ -18,7 +19,7 @@ mongoose
   .catch(error => console.error(`Cannot connect to MongoDB: ${error}`));
 
 app.use(helmet());
-app.use(crossOriginResourcePolicy({ policy: "cross-origin" }));
+app.use(cors({ origin: false }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('tiny'));

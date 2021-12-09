@@ -1,10 +1,10 @@
 const config = require('./config');
 const express = require('express');
-const helmet = require('helmet');
+// const helmet = require('helmet');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const movies = require('./routes/movies');
-const cors = require("cors");
+// const cors = require("cors");
 
 
 const app = express();
@@ -24,8 +24,8 @@ mongoose
   .then(() => console.log('Successfully connected to MongoDB'))
   .catch(error => console.error(`Cannot connect to MongoDB: ${error}`));
 
-app.use(helmet());
-app.use(cors(corsOptions));
+// app.use(helmet());
+// app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('tiny'));

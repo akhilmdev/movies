@@ -24,6 +24,9 @@
     "Movie Library API",
     "RESTful API"
   ],
+  "engines": {
+    "node": "14.x"
+  },
   "dependencies": {
     "@hapi/joi": "^17.1.0",
     "dotenv": "^8.2.0",

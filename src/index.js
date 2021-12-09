@@ -2,6 +2,7 @@ const config = require('./config');
 const express = require('express');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const crossOriginResourcePolicy = require("cross-origin-resource-policy");
 const mongoose = require('mongoose');
 const movies = require('./routes/movies');
 
@@ -17,10 +18,7 @@ mongoose
   .catch(error => console.error(`Cannot connect to MongoDB: ${error}`));
 
 app.use(helmet());
-app.use(helmet.cors({
-  accessControlAllowOrigin: '*',
-  accessControlAllowCredentials: 'BASIC'
-}));
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('tiny'));

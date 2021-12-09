@@ -23,6 +23,5 @@ app.use(morgan('tiny'));
 app.use('/api/movies/', movies);
 
 app.listen(config.server.port, () => {
-
   console.log(`Server is running on port: ${config.server.port}`);
 });

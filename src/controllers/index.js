@@ -9,7 +9,7 @@ const findAll = async (request, response) => {
   } catch (e) {
     console.log(e)
   }
-  response.status(HttpStatus.OK).send(movies);
+  response.status(HttpStatus.OK).json(movies);
 };
 
 const find = async ({ params }, response) => {

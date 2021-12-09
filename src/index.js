@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const movies = require('./routes/movies');
 const cors = require("cors");
 
+
 const app = express();
 
 mongoose

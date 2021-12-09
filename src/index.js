@@ -17,7 +17,10 @@ mongoose
   .catch(error => console.error(`Cannot connect to MongoDB: ${error}`));
 
 app.use(helmet());
-app.use(helmet.crossOriginOpenerPolicy({ policy: "unsafe-none" }));
+app.use(helmet.cors({
+  accessControlAllowOrigin: '*',
+  accessControlAllowCredentials: 'BASIC'
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('tiny'));
